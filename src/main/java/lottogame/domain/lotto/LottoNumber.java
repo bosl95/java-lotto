@@ -13,10 +13,10 @@ public class LottoNumber {
     public static final int LOTTO_NUMBER_MAX = 45;
     private final int number;
 
-    private static final Map<Integer, LottoNumber> lottoNumbers = new HashMap<>();
+    private static final Map<Integer, LottoNumber> LOTTO_NUMBERS = new HashMap<>();
     static {
         for (int i = LOTTO_NUMBER_MIN; i <= LOTTO_NUMBER_MAX; i++) {
-            lottoNumbers.put(i, new LottoNumber(i));
+            LOTTO_NUMBERS.put(i, new LottoNumber(i));
         }
     }
 
@@ -25,15 +25,15 @@ public class LottoNumber {
     }
 
     public static LottoNumber valueOf(int number) {
-        if (!lottoNumbers.containsKey(number)) {
+        if (!LOTTO_NUMBERS.containsKey(number)) {
             throw new InvalidLottoNumberRangeException();
         }
-        return lottoNumbers.get(number);
+        return LOTTO_NUMBERS.get(number);
     }
 
     public static List<LottoNumber> of(List<Integer> numbers) {
         return numbers.stream()
-                .map(number -> LottoNumber.valueOf(number))
+                .map(LottoNumber::valueOf)
                 .collect(Collectors.toList());
     }
 
