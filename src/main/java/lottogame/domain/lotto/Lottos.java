@@ -13,9 +13,7 @@ public class Lottos {
     private final List<Lotto> lottos;
 
     public Lottos(List<Lotto> values) {
-        List<Lotto> allLottos = new ArrayList<>();
-        allLottos.addAll(new ArrayList<>(values));
-        this.lottos = new ArrayList<>(allLottos);
+        this.lottos = new ArrayList<>(values);
     }
 
     public List<LottoDto> numbersOfLottos() {
