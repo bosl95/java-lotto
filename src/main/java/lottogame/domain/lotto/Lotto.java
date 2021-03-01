@@ -30,7 +30,6 @@ public class Lotto {
 
     private void duplicateLottoNumbers(List<LottoNumber> lottoNumbers) {
         if (lottoNumbers.stream()
-                .map(lottoNumber -> lottoNumber.getNumber())
                 .distinct()
                 .count() != lottoNumbers.size()) {
             throw new DuplicateLottoNumberException();

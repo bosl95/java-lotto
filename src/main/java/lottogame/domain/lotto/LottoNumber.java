@@ -45,10 +45,6 @@ public class LottoNumber {
         return number;
     }
 
-    public boolean equals(int number) {
-        return this.number == number;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

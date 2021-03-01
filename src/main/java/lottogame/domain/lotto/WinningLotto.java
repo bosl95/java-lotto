@@ -13,7 +13,7 @@ public class WinningLotto {
 
     public WinningLotto(List<Integer> numbers, int bonusBall) {
         List<LottoNumber> lottoNumbers = numbers.stream()
-                .map(number -> LottoNumber.valueOf(number))
+                .map(LottoNumber::valueOf)
                 .collect(Collectors.toList());
         duplicateBonusBall(numbers, bonusBall);
         lotto = new Lotto(lottoNumbers);
